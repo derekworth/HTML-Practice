@@ -1,23 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML>
 <html>
     <head>
         <script type="text/javascript">
-            <!--
+            
             function sayHello() {
-                alert("Hello World")
+                alert("Hello World!")
             }
-        //-->
-            </script>
+        
+            function sendMsg() {
+                alert("test1")
+                if("WebSocket" in window) {
+                    alert("test2")
+                    var ws = new WebSocket("localhost:8456");
+                    alert("Test3")
+                } else {
+                    alert("Websocket NOT supported by your Browser!");
+                }
+            }
+        </script>
     </head>
     
     <body>
         <script language="javascript" type = "text/javascript">
             <!--
-                document.write("Hello World!")
+                document.write("Hello World!\n")
+                
             //-->
         </script>
         
         <input type="button" onclick="sayHello()" value="Say Hello" />
+        <input type="button" onclick="sendMsg()" value="Send" />
         
     </body>
 </html>
